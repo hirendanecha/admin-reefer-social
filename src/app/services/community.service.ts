@@ -14,12 +14,11 @@ export class CommunityService {
   private baseUrl = environment.serverUrl + 'community';
   constructor(private http: HttpClient) { }
 
-  getAllCommunity(page: number, size: number, search: string = '', pageType: string, startDate, endDate): Observable<any> {
+  getAllCommunity(page: number, size: number, search: string = '', startDate, endDate): Observable<any> {
     const data = {
       page: page,
       size: size,
       search: search,
-      pageType: pageType,
       startDate: startDate,
       endDate: endDate
     }
@@ -39,7 +38,7 @@ export class CommunityService {
     const profileId = pId;
     const IsApprove = status;
     return this.http.get(
-      `${this.baseUrl}/status/${communityId}?IsApprove=${IsApprove}&profileId=${profileId}`
+      `${this.baseUrl}/status/${communityId}?isApprove=${IsApprove}&profileId=${profileId}`
     );
   }
 

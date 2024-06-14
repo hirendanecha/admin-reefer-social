@@ -64,7 +64,6 @@ export class CommunityComponent implements OnInit, AfterViewInit {
         this.pagination.activePage,
         this.pagination.perPage,
         this.searchCtrl,
-        this.pageType,
         this.startDate,
         this.endDate
       )?.subscribe({
@@ -85,7 +84,7 @@ export class CommunityComponent implements OnInit, AfterViewInit {
   changeCommunityStatus(community, status): void {
     this.spinner.show();
     this.communityService
-      .changeCommunityStatus(community.Id, community.profileId, status)
+      .changeCommunityStatus(community.id, community.profileId, status)
       .subscribe({
         next: (res) => {
           this.toaster.success(res.message);

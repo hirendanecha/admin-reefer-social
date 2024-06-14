@@ -65,8 +65,7 @@ export class CommunityComponent {
         this.pagination.perPage,
         this.searchCtrl,
         this.pageType,
-        this.startDate,
-        this.endDate
+        this.startDate
       )?.subscribe({
         next: (res: any) => {
           this.spinner.hide();
