@@ -57,32 +57,33 @@
           <th class="text-center">No</th>
           <th>Logo</th>
           <th>Dispensaries Name</th>
-          <th>Link</th>
-          <th>Description</th>
+          <th>Email</th>
+          <th>Phone</th>
           <th>DateCreation</th>
           <th>Country</th>
           <th>State</th>
           <th>Zip</th>
           <th>Status</th>
-          <th>Members</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
         <ng-container *ngFor="let community of communityList; let i = index">
-          <tr class="text-center align-middle" *ngIf="community.Id">
+          <tr class="text-center align-middle" *ngIf="community.id">
             <td>
               {{ i + 1 }}
             </td>
             <td>
               <img
                 class="avatar-img"
-                [src]="community.logoImg"
+                [src]="community.image"
                 onerror="this.onerror=null;this.src='/assets/img/avatars/placeholder-user.png';"
               />
             </td>
-            <td>{{ community.CommunityName }}</td>
-            <td class="c-width">
+            <td class="c-width">{{ community.name }}</td>
+            <td class="c-width">{{ community.email }}</td>
+            <td>{{ community.phone }}</td>
+            <!-- <td class="c-width">
               <a
                 [href]="
                   'https://reefer.social/communities/' +
@@ -94,25 +95,21 @@
                     community.slug
                 }}</a
               >
-            </td>
-            <td class="c-width">
-              {{ community.CommunityDescription }}
-            </td>
-            <td>{{ community.creationDate | date : "d-MM-YYYY" }}</td>
+            </td> -->
+            <td>{{ community.createdDate | date : "d-MM-YYYY" }}</td>
             <td>
-              <!-- {{ community.Country || '-' }} -->
               <svg
-                *ngIf="community.Country"
+                *ngIf="community.country"
                 cIcon
-                id="{{ community.Country }}"
-                name="cif-{{ community?.Country || null | lowercase }}"
+                id="{{ community.country }}"
+                name="cif-{{ community?.country || null | lowercase }}"
                 size="xl"
-                title="{{ community?.Country }}"
+                title="{{ community?.country }}"
               ></svg>
-              <span *ngIf="!community.Country">{{ "-" }}</span>
+              <span *ngIf="!community.country">{{ "-" }}</span>
             </td>
-            <td>{{ community.State || "-" }}</td>
-            <td>{{ community.Zip || "-" }}</td>
+            <td>{{ community.state || "-" }}</td>
+            <td>{{ community.zip || "-" }}</td>
             <td>
               <button
                 class="btn btn-sm btn-success text-white c-btn"
@@ -129,19 +126,18 @@
                 UnApprove
               </button>
             </td>
-            <td>{{ community?.members }}</td>
             <td>
-              <button
+              <!-- <button
                 class="bg-transparent border-0"
                 size="sm"
-                (click)="openCommunity(community.Id)"
+                (click)="openCommunity(community.id)"
               >
                 <i class="material-symbols-outlined"> edit </i>
-              </button>
+              </button> -->
               <button
                 class="bg-transparent border-0"
                 size="sm"
-                (click)="deleteCommunity(community.Id)"
+                (click)="deleteCommunity(community.id)"
               >
                 <!-- <svg cIcon name="cil-trash" size="md"></svg> -->
                 <i class="material-symbols-outlined"> delete </i>

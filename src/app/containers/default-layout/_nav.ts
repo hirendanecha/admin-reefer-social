@@ -15,11 +15,11 @@ export const navItems: INavData[] = [
     url: '/community',
     iconComponent: { name: 'cil-bookmark' },
   },
-  {
-    name: 'Reefer Strains',
-    url: '/pages',
-    iconComponent: { name: 'cil-layers' },
-  },
+  // {
+  //   name: 'Reefer Strains',
+  //   url: '/pages',
+  //   iconComponent: { name: 'cil-layers' },
+  // },
   // {
   //   name: 'Post List',
   //   url: '/post-list',
