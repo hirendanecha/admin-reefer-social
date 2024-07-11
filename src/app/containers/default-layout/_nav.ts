@@ -46,13 +46,13 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cil-screen-desktop' },
   },
   {
-    name: 'Advertisement page',
-    url: '/advertisements',
-    iconComponent: { name: 'cil-playlist-add' },
-  },
-  {
     name: 'Support ticket page',
     url: '/report-bugs',
     iconComponent: { name: 'cil-list' },
+  },
+  {
+    name: 'Advertisement page',
+    url: '/advertisements',
+    iconComponent: { name: 'cil-playlist-add' },
   },
 ];

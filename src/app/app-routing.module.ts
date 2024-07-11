@@ -72,6 +72,7 @@ const routes: Routes = [
         path: 'advertisements',
         loadChildren: () =>
           import('./views/advertisement-page/advertisement.module').then((m) => m.AdvertisementModule),
+          canActivate: mapToCanActivate([AuthenticationGuard])
       },
       {
         path: 'report-bugs',
