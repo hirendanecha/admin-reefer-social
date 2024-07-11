@@ -50,4 +50,9 @@ export const navItems: INavData[] = [
     url: '/advertisements',
     iconComponent: { name: 'cil-playlist-add' },
   },
+  {
+    name: 'Support ticket page',
+    url: '/report-bugs',
+    iconComponent: { name: 'cil-list' },
+  },
 ];
