@@ -34,7 +34,7 @@
         >
           <div class="col-3 c-fix-width">
             <img
-              [src]="user.profilePicName"
+              [src]="user.ProfilePicName"
               width="240"
               height="240"
               onerror="this.onerror=null;this.src='/assets/img/avatars/placeholder-user.png';"
@@ -171,7 +171,7 @@
             <td>
               <img
                 class="avatar-img"
-                [src]="user.profilePicName"
+                [src]="user.ProfilePicName"
                 onerror="this.onerror=null;this.src='/assets/img/avatars/placeholder-user.png';"
               />
             </td>
@@ -188,9 +188,9 @@
             {{ user.LastName || "-" }}
           </td> -->
 
-            <td>{{ user.userName || "-" }}</td>
+            <td>{{ user.Username || "-" }}</td>
             <td>
-              {{ user.email || "-" }}
+              {{ user.Email || "-" }}
             </td>
             <td>
               {{ user.MobileNo || "-" }}

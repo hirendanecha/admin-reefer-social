@@ -75,7 +75,7 @@ export class MarketingComponent implements OnInit {
     if (this.userData.length) {
       const csvData = this.convertToCsv(this.userData);
       const blob = new Blob([csvData], { type: 'text/csv' });
-      saveAs(blob, 'email.csv');
+      saveAs(blob, 'Email.csv');
       this.toaster.success('File downloaded successfully')
     } else {
       this.toaster.danger('data not available')
