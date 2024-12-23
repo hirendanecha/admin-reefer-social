@@ -65,7 +65,8 @@ export class CommunityComponent {
         this.pagination.perPage,
         this.searchCtrl,
         this.pageType,
-        this.startDate
+        this.startDate,
+        this.endDate
       )?.subscribe({
         next: (res: any) => {
           this.spinner.hide();
@@ -120,7 +121,7 @@ export class CommunityComponent {
   }
 
   openCommunity(id: any): void {
-    this.router.navigate([`pages/edit/${id}`]);
+    this.router.navigate([`reefer-strains/edit/${id}`]);
   }
 
   createCommunityAdmin(userId, communityId): void {

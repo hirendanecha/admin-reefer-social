@@ -12,22 +12,33 @@ const httpOptions = {
 })
 export class CommunityService {
   private baseUrl = environment.serverUrl + 'community';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getAllCommunity(page: number, size: number, search: string = '', startDate, endDate): Observable<any> {
+  getAllCommunity(
+    page: number,
+    size: number,
+    search: string = '',
+    pageType: string = '',
+    startDate,
+    endDate
+  ): Observable<any> {
     const data = {
       page: page,
       size: size,
       search: search,
+      pageType: pageType,
       startDate: startDate,
-      endDate: endDate
-    }
-    return this.http.post(
-      `${this.baseUrl}/all-community/`, data
-    );
+      endDate: endDate,
+    };
+    return this.http.post(`${this.baseUrl}/all-community/`, data);
   }
 
-  getUnApproveCommunity(page: number, size: number, search, pageType: string): Observable<any> {
+  getUnApproveCommunity(
+    page: number,
+    size: number,
+    search,
+    pageType: string
+  ): Observable<any> {
     return this.http.get(
       `${this.baseUrl}/un-approve-community/?page=${page}&size=${size}&search=${search}&pageType=${pageType}`
     );
@@ -52,7 +63,8 @@ export class CommunityService {
 
   searchCommunity(searchText, page, size): Observable<any> {
     return this.http.get(
-      `${this.baseUrl
+      `${
+        this.baseUrl
       }/search/?searchText=${searchText.trim()}&?page=${page}&size=${size}`
     );
   }

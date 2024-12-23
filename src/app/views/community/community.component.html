@@ -14,7 +14,7 @@
       >
     </c-nav>
   </c-card-header> -->
-  <c-card-header>Community</c-card-header>
+  <c-card-header>Dispensaries</c-card-header>
   <c-card-body>
     <!-- <c-tab-content
       #tabContent="cTabContent"
@@ -98,6 +98,7 @@
             </td> -->
             <td>{{ community.createdDate | date : "d-MM-YYYY" }}</td>
             <td>
+              <!-- {{ community.Country || '-' }} -->
               <svg
                 *ngIf="community.country"
                 cIcon

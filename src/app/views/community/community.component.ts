@@ -31,7 +31,7 @@ export class CommunityComponent implements OnInit, AfterViewInit {
     perPage: 15,
     totalItems: 0,
   };
-  pageType = 'community'
+  pageType = ''
   startDate: any;
   endDate: any;
   constructor(
@@ -64,6 +64,7 @@ export class CommunityComponent implements OnInit, AfterViewInit {
         this.pagination.activePage,
         this.pagination.perPage,
         this.searchCtrl,
+        this.pageType,
         this.startDate,
         this.endDate
       )?.subscribe({
@@ -120,7 +121,7 @@ export class CommunityComponent implements OnInit, AfterViewInit {
   }
 
   openCommunity(id: any): void {
-    this.router.navigate([`community/edit/${id}`]);
+    this.router.navigate([`dispensaries/edit/${id}`]);
   }
 
   createCommunityAdmin(userId, communityId): void {

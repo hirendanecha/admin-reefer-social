@@ -42,14 +42,14 @@
           </div>
 
           <div class="d-flex flex-column col-6 c-text-area">
-            <!-- <div class="d-flex">
+            <div class="d-flex">
               <h4>First name:</h4>
               {{ user.FirstName || "-" }}
             </div>
             <div class="d-flex">
               <h4>Last name:</h4>
               {{ user.LastName || "-" }}
-            </div> -->
+            </div>
             <div class="d-flex">
               <h4>Username:</h4>
               {{ user.Username || "-" }}
@@ -67,13 +67,17 @@
               {{ user.DateCreation | date : "d-MM-YYYY" }}
             </div>
             <div class="d-flex">
-              <h4>Email</h4>
+              <h4>Email:</h4>
               {{ user.Email || "-" }}
             </div>
-            <!-- <div class="d-flex">
+            <div class="d-flex">
               <h4>Phone:</h4>
               {{ user.MobileNo || "-" }}
-            </div> -->
+            </div>
+            <div class="d-flex">
+              <h4>Unsubscribed By:</h4>
+              {{ user.unsubscribeCount }}
+            </div>
           </div>
           <div class="clo-4 d-flex flex-column c-list-btn">
             <button
@@ -82,7 +86,7 @@
                 user.IsSuspended === 'N' ? ' btn-danger' : 'btn-success'
               "
               (click)="
-                suspendUser(user.Id, user.IsSuspended === 'N' ? 'Y' : 'N')
+                suspendUser(user, user.IsSuspended === 'N' ? 'Y' : 'N')
               "
             >
               {{ user.IsSuspended === "N" ? "Suspend" : "Re-active" }}
@@ -218,7 +222,7 @@
                     user.IsSuspended === 'N' ? ' btn-danger' : 'btn-success'
                   "
                   (click)="
-                    suspendUser(user.Id, user.IsSuspended === 'N' ? 'Y' : 'N')
+                    suspendUser(user, user.IsSuspended === 'N' ? 'Y' : 'N')
                   "
                 >
                   {{ user.IsSuspended === "N" ? "Suspend" : "Re-active" }}

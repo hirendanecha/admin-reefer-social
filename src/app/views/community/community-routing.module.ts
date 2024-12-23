@@ -15,7 +15,7 @@ const routes: Routes = [
     path: 'edit/:id',
     component: EditCommunityComponent,
     data: {
-      title: 'Edit Dispensaries',
+      title: 'Edit Dispensaries & Wholesale',
     },
   },
 ];

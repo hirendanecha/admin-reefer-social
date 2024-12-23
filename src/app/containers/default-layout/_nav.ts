@@ -11,9 +11,24 @@ export const navItems: INavData[] = [
     // }
   },
   {
-    name: 'Dispensaries & Wholesale',
-    url: '/community',
+    name: 'Dispensaries',
+    url: '/dispensaries-wholesale',
     iconComponent: { name: 'cil-bookmark' },
+  },
+  {
+    name: 'Reefer Strains',
+    url: '/reefer-strains',
+    iconComponent: { name: 'cil-bookmark' },
+  },
+  {
+    name: 'News Feed',
+    url: '/newsfeed',
+    iconComponent: { name: 'cil-notes' },
+  },
+  {
+    name: 'Research',
+    url: '/research',
+    iconComponent: { name: 'cil-control' },
   },
   // {
   //   name: 'Reefer Strains',
